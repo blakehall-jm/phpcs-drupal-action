@@ -1,6 +1,6 @@
 name: 'PHPCS Drupal check with Annotations'
 description: 'PHPCS Drupal checker with auto annotations out of the box'
-author: 'Guillaume Duveau'
+author: 'JMI'
 inputs:
   memory_limit:
     description: 'Define the memory limit to use. Default: 128M.'
@@ -8,7 +8,7 @@ inputs:
     default: '128M'
 runs:
   using: 'docker'
-  image: 'docker://quay.io/guix77/phpcs-drupal-action:php8.3'
+  image: 'docker://ghcr.io/blakehall-jm/phpcs-drupal-action:8.2'
 branding:
   icon: 'code'
   color: 'blue'
