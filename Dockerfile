@@ -1,4 +1,4 @@
-FROM php:8.2-cli-alpine
+FROM php:8.3-cli-alpine
 USER root
 ENV PATH=${PATH}:/root/.composer/vendor/bin
 # To be able to download ca-certificates with the `apk add` command
@@ -17,7 +17,7 @@ RUN apk add --no-cache \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     composer global config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-installer true && \
     composer global require drupal/coder squizlabs/php_codesniffer && \
-    phpcs --config-set default_standard Drupal,DrupalPractice
+    phpcs --config-set default_standard Drupal,DrupalPractice .
 COPY app /app
 RUN chmod +x /app/entrypoint.sh
 WORKDIR /app
